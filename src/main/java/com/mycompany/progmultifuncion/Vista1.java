@@ -8,6 +8,12 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -73,7 +79,7 @@ public class Vista1 extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        field2.setBounds(280, 100, 190, 30);
+        field2.setBounds(276, 116, 190, 30);
 
         jPanel1.add(field2);
         
@@ -84,7 +90,7 @@ public class Vista1 extends javax.swing.JFrame {
             }
         });
         
-        field1.setBounds(40, 100, 180, 30);
+        field1.setBounds(36, 116, 180, 30);
 
         jPanel1.add(field1);
         
@@ -99,7 +105,7 @@ public class Vista1 extends javax.swing.JFrame {
         Dimension preferredSize = selector2.getPreferredSize();
 
 
-        selector2.setBounds(280, 70, preferredSize.width, preferredSize.height);
+        selector2.setBounds(276, 86, 190, 23);
 
     
         jPanel1.add(selector2);
@@ -107,7 +113,7 @@ public class Vista1 extends javax.swing.JFrame {
         Dimension pSize = jLabel1.getPreferredSize();
 
  
-       jLabel1.setBounds(240, 70, preferredSize.width, preferredSize.height);
+       jLabel1.setBounds(230, 85, 36, 23);
 
         jPanel1.add(jLabel1);
         selector1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
@@ -128,13 +134,13 @@ public class Vista1 extends javax.swing.JFrame {
         Dimension p2Size = selector1.getPreferredSize();
 
   
-        selector1.setBounds(100, 70, preferredSize.width, preferredSize.height);
+        selector1.setBounds(33, 86, 180, 23);
 
         jPanel1.add(selector1);
         jLabel2.setFont(new java.awt.Font("Consolas", 3, 14)); // NOI18N
         jLabel2.setText("Cambiar tipo de unidades");
   
-        jLabel2.setBounds(10, 200, 310, 20);
+        jLabel2.setBounds(142, 215, 310, 20);
 
        jPanel1.add(jLabel2);
        
@@ -146,7 +152,7 @@ public class Vista1 extends javax.swing.JFrame {
             }
         });
   
-        ConvertButton.setBounds(180, 140, 130, 40);
+        ConvertButton.setBounds(176, 156, 130, 40);
 
         jPanel1.add(ConvertButton);
         TempButton.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
@@ -159,7 +165,7 @@ public class Vista1 extends javax.swing.JFrame {
   
         jPanel1.setLayout(null);
 
-        TempButton.setBounds(30, 230, 140, 30);
+        TempButton.setBounds(26, 246, 140, 43);
 
         jPanel1.add(TempButton);
         jLabel3.setFont(new java.awt.Font("Consolas", 3, 24)); // NOI18N
@@ -185,21 +191,30 @@ public class Vista1 extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
 
-        WeightButton.setBounds(30, 270, 140, 30);
+        WeightButton.setBounds(176, 247, 165, 42);
 
         jPanel1.add(WeightButton);
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
         );
+        getContentPane().setLayout(layout);
+        
+        JButton btnLongitud = new JButton();
+        btnLongitud.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		Control.changeDataUI(selector1, selector2, "longitud");
+        	}
+        });
+        btnLongitud.setText("Longitud");
+        btnLongitud.setFont(new Font("Consolas", Font.PLAIN, 12));
+        btnLongitud.setBounds(351, 248, 140, 41);
+        jPanel1.add(btnLongitud);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -227,21 +242,42 @@ public class Vista1 extends javax.swing.JFrame {
     }//GEN-LAST:event_field2ActionPerformed
 
     private void ConvertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConvertButtonActionPerformed
+    switch(control.buttonControler){
     
-    control.l_unitConverter(field1, field2, selector1, selector2);
+    case 1:
+    	control.l_unitConverter(field1, field2, selector1, selector2);
+    	break;
+    	
+    case 2:
+    	control.temp_unitConverter(field1, field2, selector1, selector2);
+    	break;
+    
+    case 3:
+    	control.weight_unitConverter(field1, field2, selector1, selector2);
+    	break;
+    default:
+    	break;
+    }
+    
         
     }//GEN-LAST:event_ConvertButtonActionPerformed
 
     private void TempButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempButtonActionPerformed
-     this.dispose();
-     Vista2 Temp = new Vista2();
-     Temp.setVisible(true);
+    
+    Control.changeDataUI(selector1, selector2, "temperatura");
+    
+     //this.dispose();
+     //Vista2 Temp = new Vista2();
+     //Temp.setVisible(true);
     }//GEN-LAST:event_TempButtonActionPerformed
 
     private void WeightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WeightButtonActionPerformed
-     this.dispose();
-     Vista3 Weight = new Vista3();
-     Weight.setVisible(true);   
+    	
+     Control.changeDataUI(selector1, selector2, "masa");	
+         	
+     //this.dispose();
+     //Vista3 Weight = new Vista3();
+     //Weight.setVisible(true);   
     }//GEN-LAST:event_WeightButtonActionPerformed
 
     private Control control;
@@ -258,5 +294,4 @@ public class Vista1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> selector1;
     private javax.swing.JComboBox<String> selector2;
-    // End of variables declaration//GEN-END:variables
 }

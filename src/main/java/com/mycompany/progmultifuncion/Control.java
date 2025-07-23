@@ -3,7 +3,15 @@ package com.mycompany.progmultifuncion;
 import java.awt.Image;
 import java.awt.Toolkit;
 
+import javax.swing.JComboBox;
+
+
+
 public class Control{
+	
+	//Variable para controlar qué tipo de conversión se hará
+	public static int buttonControler;
+	
     
   public static Double formatearDecimales(Double numero, Integer numeroDecimales) {
     return Math.round(numero * Math.pow(10, numeroDecimales)) / Math.pow(10, numeroDecimales);
@@ -796,6 +804,48 @@ public class Control{
     }
     
 }
+    
+    public static void changeDataUI(JComboBox selector1, JComboBox selector2, String conversorCase) {
+    	
+    	
+    	
+    	
+    	switch(conversorCase) {
+    	
+    	case "longitud": 
+    		
+    		  selector1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "milímetros", "centímetros", "decímetros", "metros", "Decámetros", "Hectómetros", "Kilómetros", "Pulgada", "Pie", "Yarda", "Milla" }));
+    		  selector2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "milímetros", "centímetros", "decímetros", "metros", "Decámetros", "Hectómetros", "Kilómetros", "Pulgada", "Pie", "Yarda", "Milla" }));
+    		  buttonControler = 1;
+    		break;
+    		
+    	case "temperatura":
+    		
+    		   selector1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grados Fahrenheit", "Grados Celsius", "Grados Kelvin" }));
+    		   selector2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grados Fahrenheit", "Grados Celsius", "Grados Kelvin" }));
+    		   buttonControler = 2;
+    		break;
+    	
+    	case "masa":
+    		
+    			selector1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gramos", "Kilogramos", "Libras", "Onzas" }));
+    			selector2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gramos", "Kilogramos", "Libras", "Onzas" }));
+    			buttonControler = 3;
+    		break;
+    	
+    	default:
+    		
+    		break;    	
+    		
+    	}
+    	
+    	
+    		
+    		
+    	
+    	
+    	
+    }
    
 
     

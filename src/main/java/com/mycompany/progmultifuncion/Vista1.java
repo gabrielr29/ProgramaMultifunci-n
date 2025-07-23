@@ -235,13 +235,14 @@ public class Vista1 extends javax.swing.JFrame {
     
         control.numberValidator(evt, field1);
          
-    }//GEN-LAST:event_field1KeyTyped
+    }
 
-    private void field2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_field2ActionPerformed
+    private void field2ActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }
 
-    private void ConvertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConvertButtonActionPerformed
+    private void ConvertButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    	
     switch(control.buttonControler){
     
     case 1:
@@ -260,7 +261,7 @@ public class Vista1 extends javax.swing.JFrame {
     }
     
         
-    }//GEN-LAST:event_ConvertButtonActionPerformed
+    }
 
     private void TempButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempButtonActionPerformed
     
@@ -269,7 +270,7 @@ public class Vista1 extends javax.swing.JFrame {
      //this.dispose();
      //Vista2 Temp = new Vista2();
      //Temp.setVisible(true);
-    }//GEN-LAST:event_TempButtonActionPerformed
+    }
 
     private void WeightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WeightButtonActionPerformed
     	

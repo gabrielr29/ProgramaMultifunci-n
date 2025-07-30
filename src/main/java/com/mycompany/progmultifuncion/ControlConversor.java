@@ -7,7 +7,7 @@ import javax.swing.JComboBox;
 
 
 
-public class Control{
+public class ControlConversor{
 	
 	//Variable para controlar qué tipo de conversión se hará
 	public static int buttonControler = 1;

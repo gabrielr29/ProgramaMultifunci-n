@@ -19,14 +19,14 @@ import java.awt.event.ActionEvent;
  *
  * @author Gab
  */
-public class Vista1 extends javax.swing.JFrame {
+public class ConversorForm extends javax.swing.JFrame {
 
     /**
      * Creates new form Vista1
      */
-    public Vista1() {
+    public ConversorForm() {
         
-        control = new Control();
+        control = new ControlConversor();
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
@@ -207,7 +207,7 @@ public class Vista1 extends javax.swing.JFrame {
         JButton btnLongitud = new JButton();
         btnLongitud.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		Control.changeDataUI(selector1, selector2, "longitud");
+        		ControlConversor.changeDataUI(selector1, selector2, "longitud");
         	}
         });
         btnLongitud.setText("Longitud");
@@ -263,17 +263,17 @@ public class Vista1 extends javax.swing.JFrame {
 
     private void TempButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempButtonActionPerformed
     
-    Control.changeDataUI(selector1, selector2, "temperatura");
+    ControlConversor.changeDataUI(selector1, selector2, "temperatura");
 
     }
 
     private void WeightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WeightButtonActionPerformed
     	
-     Control.changeDataUI(selector1, selector2, "masa");	
+     ControlConversor.changeDataUI(selector1, selector2, "masa");	
          	
     }
 
-    private Control control;
+    private ControlConversor control;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ConvertButton;

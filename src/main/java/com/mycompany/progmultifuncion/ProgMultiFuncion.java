@@ -9,7 +9,7 @@ public class ProgMultiFuncion {
 
     public static void main(String[] args) {
         
-        Vista1 vista = new Vista1();
+        ConversorForm vista = new ConversorForm();
                 
         vista.setVisible(true);
              
